@@ -25,24 +25,24 @@ const get_weekday = (new_date)=>{
     var d_c = new Date(new_date);
     return d_c.getDay()
 }
-const get_start_date = (new_date)=>{
+const get_start_date = (new_date, v_id)=>{
     var d = new Date(new_date);
     var f = get_weekday(new_date)
     if(f === 6){
         var c = new Date(d.setDate(d.getDate() + 2));
-        var e = date.format(c, 'ddd, DD MMM YYYY');
-        return e
+        return c
+    }
+    if(f === 5 && (v_id === 9396 || v_id === 9395)){
+        var c = new Date(d.setDate(d.getDate() + 3));
+        return c
     }
     var c = new Date(d.setDate(d.getDate() + 1));
-    var e = date.format(c, 'ddd, DD MMM YYYY');
-    return e
+    return c
 }
 const date_increment = (new_date)=>{
     var d = new Date(new_date);
     var c = new Date(d.setDate(d.getDate() + 1));
-
-    var f = date.format(c, 'ddd, DD MMM YYYY')
-    return f
+    return c
 }
 
 

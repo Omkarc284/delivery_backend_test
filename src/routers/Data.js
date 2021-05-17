@@ -196,7 +196,7 @@ orderstream.on('change',(chng)=>{
         delete body.fullDocument._id
         var delvry = new Schedule_del(body.fullDocument)
         delvry.package_quantity = functs.pkg_q(delvry.variation_id,delvry.quantity)
-        delvry.start_date = functs.get_start_date(delvry.date_created)
+        delvry.start_date = functs.get_start_date(delvry.date_created, delvry.variation_id)
         var q = delvry.package_quantity;
         var dte = delvry.start_date;
         
@@ -206,9 +206,9 @@ orderstream.on('change',(chng)=>{
                 var dte = new Date(dte)
                 var day = dte.getDay()
                 var tt = {
-                    D_o_d : date.format(dte, 'ddd, DD MMM YYYY'),
+                    D_o_d : dte,
                     del_quantity : delvry.quantity,
-                    del_status : "Delivery Scheduled",
+                    del_status : "Scheduled",
                     del_note : ""
                 };
                 if(day===1||day===2||day===3||day===4||day===5){
@@ -228,9 +228,9 @@ orderstream.on('change',(chng)=>{
                 var dte = new Date(dte)
                 var day = dte.getDay()
                 var tt = {
-                    D_o_d : date.format(dte, 'ddd, DD MMM YYYY'),
+                    D_o_d : dte,
                     del_quantity : delvry.quantity,
-                    del_status : "Delivery Scheduled",
+                    del_status : "Scheduled",
                     del_note : ""
                 };
                 if(day===1||day===2||day===3||day===4||day===5||day===6){
@@ -244,9 +244,9 @@ orderstream.on('change',(chng)=>{
         }
         else{
             var tt = {
-                D_o_d : date.format(dte, 'ddd, DD MMM YYYY'),
+                D_o_d : dte,
                 del_quantity : delvry.quantity,
-                del_status : "Delivery Scheduled",
+                del_status : "Scheduled",
                 del_note: ""
             };
             delvry.delivery_Time_table.push(tt);

@@ -5,14 +5,10 @@ const schedule_deliverySchema = new mongoose.Schema({
     "type": "Number"
   },
   "item_id": {
-    "type": "Number",
-
+    "type": "Number"
   },
   "item_name": {
     "type": "String"
-  },
-  "product_id": {
-    "type": "Number"
   },
   "variation_id": {
     "type": "Number"
@@ -26,25 +22,10 @@ const schedule_deliverySchema = new mongoose.Schema({
   "date_created": {
     "type": "Date"
   },
-  "date_modified": {
-    "type": "Date"
-  },
-  "discount_total": {
-    "type": "String"
-  },
-  "subtotal": {
-    "type": "String"
-  },
   "item_total": {
     "type": "String"
   },
   "total": {
-    "type": "String"
-  },
-  "customer_id": {
-    "type": "Number"
-  },
-  "order_key": {
     "type": "String"
   },
   "shipping": {
@@ -85,15 +66,6 @@ const schedule_deliverySchema = new mongoose.Schema({
   "date_completed": {
     "type": "Date"
   },
-  "date_paid": {
-    "type": "Date"
-  },
-  "price": {
-    "type": "Number"
-  },
-  "parent_name": {
-    "type": "String"
-  },
   "start_date": {
     "type": "Date"
   },
@@ -101,12 +73,6 @@ const schedule_deliverySchema = new mongoose.Schema({
     "type": "Date"
   },
   "package_quantity": {
-    "type": "Number"
-  },
-  "package_quantity_delivered": {
-    "type": "Number"
-  },
-  "package_quantity_remain": {
     "type": "Number"
   },
   "delivery_Time_table": [
